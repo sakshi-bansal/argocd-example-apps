@@ -7,6 +7,10 @@ metadata:
     chart: {{ template "helm-guestbook.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
+  annotations:
+    vault.hashicorp.com/agent-inject: {{ .Values.metadata.annotations.vault.enable }}
+    vault.hashicorp.com/agent-inject-secret-webapp: {{ .Values.metadata.annotations.vault.secret }}
+    vault.hashicorp.com/role: {{ .Values.metadata.annotations.vault.role }}
 spec:
   replicas: {{ .Values.replicaCount }}
   revisionHistoryLimit: 3
