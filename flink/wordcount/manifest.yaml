@@ -7,7 +7,7 @@ metadata:
   labels:
     environment: development
 spec:
-  image: docker.io/lyft/wordcount-operator-example:e9054a414590b267178eefbe9331bd611863ff15
+  image: docker.io/lyft/wordcount-operator-example:8630a9b2ba760b13804b86c50b46352cbe3b89c8
   deleteMode: None
   flinkConfig:
     taskmanager.heap.size: 200
