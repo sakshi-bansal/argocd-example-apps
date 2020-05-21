@@ -4,9 +4,9 @@ metadata:
   name: wordcount-operator-example
   namespace: argocd-apps
   annotations:
-    vault.hashicorp.com/agent-inject: true
-    vault.hashicorp.com/agent-inject-secret-webapp: "secret/webapp/config" 
-    vault.hashicorp.com/role: "webapp"
+    vault.hashicorp.com/agent-inject: "true"
+    vault.hashicorp.com/agent-inject-secret-webapp: secret/webapp/config 
+    vault.hashicorp.com/role: webapp
   labels:
     environment: development
 spec:
