@@ -17,7 +17,7 @@ spec:
         vault.hashicorp.com/agent-inject-secret-bapi: "secret/bapi/config"
         vault.hashicorp.com/role: "bapi"
     spec:
-      serviceAccountName: app
+      serviceAccountName: default
       containers:
       - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
         name: guestbook-ui
