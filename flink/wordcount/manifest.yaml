@@ -8,7 +8,7 @@ metadata:
     vault.hashicorp.com/agent-inject-secret-webapp: secret/webapp/config 
     vault.hashicorp.com/role: webapp
   labels:
-    environment: stage2
+    environment: stage23
 spec:
   image: docker.io/lyft/wordcount-operator-example:8630a9b2ba760b13804b86c50b46352cbe3b89c8
   deleteMode: None
