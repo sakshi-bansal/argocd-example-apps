@@ -32,7 +32,7 @@ spec:
         memory: {{ .Values.spec.taskManager.resources.requests.memory }}
         cpu: {{ .Values.spec.taskManager.resources.requests.cpu }}
   restartNonce: {{ .Values.spec.restartNonce }}
-  flinkVersion: {{ .Values.spec.flinkVersion }}
+  flinkVersion: "1.9"
   jarName: {{ .Values.spec.jarName }}
   parallelism: {{ .Values.spec.parallelism }}
   entryClass: {{ .Values.spec.entryClass }}
