@@ -10,30 +10,30 @@ metadata:
   labels:
     environment: {{ .Values.metadata.labels.environment }}
 spec:
-  image: {{ .Values.image.repository }}
-  imagePullPolicy: {{ .Values.image.pullPolicy }}
+  image: {{ .Values.spec.image.repository }}
+  imagePullPolicy: {{ .Values.spec.image.pullPolicy }}
   flinkConfig:
-    taskmanager.heap.size: {{ .Values.flinkConfig.heap }}
-    taskmanager.network.memory.fraction: {{ .Values.flinkConfig.fraction }}
-    taskmanager.network.memory.min: {{ .Values.flinkConfig.min }}
-    state.backend.fs.checkpointdir: {{ .Values.flinkConfig.backend }}
-    state.checkpoints.dir: {{ .Values.flinkConfig.checkpoint }}
-    state.savepoints.dir: {{ .Values.flinkConfig.savepoint }}
-    web.upload.dir: {{ .Values.flinkConfig.upload }}
+    taskmanager.heap.size: {{ .Values.spec.flinkConfig.heap }}
+    taskmanager.network.memory.fraction: {{ .Values.spec.flinkConfig.fraction }}
+    taskmanager.network.memory.min: {{ .Values.spec.flinkConfig.min }}
+    state.backend.fs.checkpointdir: {{ .Values.spec.flinkConfig.backend }}
+    state.checkpoints.dir: {{ .Values.spec.flinkConfig.checkpoint }}
+    state.savepoints.dir: {{ .Values.spec.flinkConfig.savepoint }}
+    web.upload.dir: {{ .Values.spec.flinkConfig.upload }}
   jobManagerConfig:
     resources:
       requests:
-        memory: {{ .Values.jobManager.resources.requests.memory }}
-        cpu: {{ .Values.jobManager.resources.requests.cpu }}
-    replicas: {{ .Values.jobManager.replicas }}
+        memory: {{ .Values.spec.jobManager.resources.requests.memory }}
+        cpu: {{ .Values.spec.jobManager.resources.requests.cpu }}
+    replicas: {{ .Values.spec.jobManager.replicas }}
   taskManagerConfig:
-    taskSlots: {{ .Values.taskManager.taskSlots }}
+    taskSlots: {{ .Values.spec.taskManager.taskSlots }}
     resources:
       requests:
-        memory: {{ .Values.taskManager.resources.requests.memory }}
-        cpu: {{ .Values.taskManager.resources.requests.cpu }}
-  restartNonce: {{ .Values.restartNonce }}
-  flinkVersion: {{ .Values.flinkVersion }}
-  jarName: {{ .Values.jarName }}
-  parallelism: {{ .Values.parallelism }}
-  entryClass: {{ .Values.entryClass }}
+        memory: {{ .Values.spec.taskManager.resources.requests.memory }}
+        cpu: {{ .Values.spec.taskManager.resources.requests.cpu }}
+  restartNonce: {{ .Values.spec.restartNonce }}
+  flinkVersion: {{ .Values.spec.flinkVersion }}
+  jarName: {{ .Values.spec.jarName }}
+  parallelism: {{ .Values.spec.parallelism }}
+  entryClass: {{ .Values.spec.entryClass }}
