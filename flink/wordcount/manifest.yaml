@@ -8,7 +8,7 @@ metadata:
     vault.hashicorp.com/agent-inject-secret-webapp: secret/webapp/config 
     vault.hashicorp.com/role: webapp
   labels:
-    environment: development
+    environment: stage
 spec:
   image: docker.io/lyft/wordcount-operator-example:8630a9b2ba760b13804b86c50b46352cbe3b89c8
   deleteMode: None
@@ -34,5 +34,5 @@ spec:
         cpu: "0.1"
   flinkVersion: "1.8"
   jarName: "wordcount-operator-example-1.0.0-SNAPSHOT.jar"
-  parallelism: 6
+  parallelism: 3
   entryClass: "org.apache.flink.WordCount"
