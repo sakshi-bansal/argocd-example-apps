@@ -10,8 +10,7 @@ metadata:
   labels:
     environment: {{ .Values.metadata.labels.environment }}
 spec:
-  image: {{ .Values.spec.image.repository }}
-  imagePullPolicy: {{ .Values.spec.image.pullPolicy }}
+  image: {{ .Values.spec.image }}
   flinkConfig:
     taskmanager.heap.size: {{ .Values.spec.flinkConfig.heap }}
     taskmanager.network.memory.fraction: {{ .Values.spec.flinkConfig.fraction }}
