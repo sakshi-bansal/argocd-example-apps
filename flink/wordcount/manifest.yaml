@@ -11,7 +11,7 @@ metadata:
     environment: stage23
 spec:
   image: docker.io/lyft/wordcount-operator-example:8630a9b2ba760b13804b86c50b46352cbe3b89c8
-  deleteMode: None
+  restartNonce: "abc"
   flinkConfig:
     taskmanager.heap.size: 200
     taskmanager.network.memory.fraction: 0.1
