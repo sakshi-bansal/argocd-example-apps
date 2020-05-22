@@ -1,0 +1,39 @@
+apiVersion: flink.k8s.io/v1beta1
+kind: FlinkApplication
+metadata:
+  name: wordcount-operator-example
+  namespace: argocd-apps
+  annotations:
+    vault: '"true"'
+    secret: "secret/webapp/config" 
+    role: "webapp"
+  labels:
+    environment: development
+spec:
+  image: docker.io/lyft/wordcount-operator-example:8630a9b2ba760b13804b86c50b46352cbe3b89c8
+  flinkConfig:
+    heap: 200
+    fraction: 0.1
+    min: 10m
+    backend: file:///checkpoints/flink/checkpoints
+    checkpoints: file:///checkpoints/flink/externalized-checkpoints
+    savepoint: file:///checkpoints/flink/savepoints
+    upload: /opt/flink
+  jobManager:
+    resources:
+      requests:
+        memory: "200Mi"
+        cpu: "0.1"
+    replicas: 1
+  taskManager:
+    taskSlots: 2
+    resources:
+      requests:
+        memory: "200Mi"
+        cpu: "0.1"
+  restartNonce: "abc"
+  flinkVersion: "1.8"
+  jarName: "wordcount-operator-example-1.0.0-SNAPSHOT.jar"
+  parallelism: 3
+  entryClass: "org.apache.flink.WordCount"
+

@@ -1,0 +1,6 @@
+apiVersion: v2
+name: flink-jobs-helmchart
+description: A Helm chart for flink job
+type: application
+version: 0.0.1
+appVersion: 0.0.1
