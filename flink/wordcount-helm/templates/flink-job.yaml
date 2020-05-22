@@ -12,13 +12,14 @@ metadata:
 spec:
   image: {{ .Values.spec.image }}
   flinkConfig:
+    jobmanager.web.submit.enable: true
     taskmanager.heap.size: {{ .Values.spec.flinkConfig.heap }}
     taskmanager.network.memory.fraction: {{ .Values.spec.flinkConfig.fraction }}
     taskmanager.network.memory.min: {{ .Values.spec.flinkConfig.min }}
     state.backend.fs.checkpointdir: {{ .Values.spec.flinkConfig.backend }}
     state.checkpoints.dir: {{ .Values.spec.flinkConfig.checkpoint }}
     state.savepoints.dir: {{ .Values.spec.flinkConfig.savepoint }}
-    web.upload.dir: {{ .Values.spec.flinkConfig.upload }}
+    web.upload.dir: /opt/flink
   jobManagerConfig:
     nodeSelector:
       nodeLabel: node1
