@@ -36,3 +36,4 @@ spec:
   jarName: {{ .Values.spec.jarName }}
   parallelism: {{ .Values.spec.parallelism }}
   entryClass: {{ .Values.spec.entryClass }}
+  programArgs: "--config.file /var/config.yaml"

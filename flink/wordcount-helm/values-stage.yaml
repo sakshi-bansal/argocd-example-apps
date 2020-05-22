@@ -36,4 +36,3 @@ spec:
   jarName: "wordcount-operator-example-1.0.0-SNAPSHOT.jar"
   parallelism: 3
   entryClass: "org.apache.flink.WordCount"
-  programArgs: "--config.file /var/config.yaml"
