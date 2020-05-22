@@ -26,14 +26,14 @@ spec:
         cpu: '"0.1"'
     replicas: 1
   taskManager:
-    taskSlots: 2
+    taskSlots: "2"
     resources:
       requests:
         memory: '"200Mi"'
         cpu: '"0.1"'
   restartNonce: "abc"
-  flinkVersion: "1.8"
+  flinkVersion: "1.9"
   jarName: "wordcount-operator-example-1.0.0-SNAPSHOT.jar"
   parallelism: 3
   entryClass: "org.apache.flink.WordCount"
-
+  programArgs: "--config.file /var/config.yaml"
