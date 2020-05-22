@@ -20,16 +20,12 @@ spec:
     savepoint: file:///checkpoints/flink/savepoints
     upload: /opt/flink
   jobManager:
-    nodeSelector:
-      nodeLabel: node1
     resources:
       requests:
         memory: '"200Mi"'
         cpu: '"0.1"'
     replicas: 1
   taskManager:
-    nodeSelector:
-      nodeLabel: node1
     taskSlots: "1"
     resources:
       requests:

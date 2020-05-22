@@ -20,12 +20,16 @@ spec:
     state.savepoints.dir: {{ .Values.spec.flinkConfig.savepoint }}
     web.upload.dir: {{ .Values.spec.flinkConfig.upload }}
   jobManagerConfig:
+    nodeSelector:
+      nodeLabel: node1
     resources:
       requests:
         memory: {{ .Values.spec.jobManager.resources.requests.memory }}
         cpu: {{ .Values.spec.jobManager.resources.requests.cpu }}
     replicas: {{ .Values.spec.jobManager.replicas }}
   taskManagerConfig:
+    nodeSelector:
+      nodeLabel: node1
     taskSlots: {{ .Values.spec.taskManager.taskSlots }}
     resources:
       requests:
