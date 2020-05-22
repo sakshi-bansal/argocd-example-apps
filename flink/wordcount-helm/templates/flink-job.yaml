@@ -29,7 +29,7 @@ spec:
     replicas: {{ .Values.spec.jobManager.replicas }}
   taskManagerConfig:
     nodeSelector:
-      nodeLabel: node1
+      nodeLabel: node4
     taskSlots: {{ .Values.spec.taskManager.taskSlots }}
     resources:
       requests:
