@@ -34,5 +34,5 @@ spec:
         cpu: "0.1"
   flinkVersion: "1.8"
   jarName: "wordcount-operator-example-1.0.0-SNAPSHOT.jar"
-  parallelism: 3
+  parallelism: 6
   entryClass: "org.apache.flink.WordCount"
